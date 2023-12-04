@@ -1,0 +1,74 @@
+@use "../sass/variables" as *;
+
+
+
+
+.footer {
+    background-color: $VeryDarkViolet;
+    min-height: 400px;
+    margin-top: -1px;
+    color: #fff;
+    overflow-x: hidden;
+
+    .container {
+        padding: 4.375rem 0;
+        @media (min-width: 1400px) {
+            max-width: 1442px;
+        }
+        .row {
+            a {
+                font-weight: 400;
+                &:hover {
+                    color: $Cyan;
+                }
+            }
+            .footer_links {
+                display: flex;
+                div {
+                    margin: 0 auto;
+                }
+
+                &_head {
+                    margin-bottom: 2rem;
+                }
+                ul {
+                    li:not(:last-child) {
+                        margin-bottom: .9rem;
+                    }
+                }
+
+                @media (max-width: 515px) {
+                    & {
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                        align-items: center;
+                        div {
+                            margin: 0;
+                        }
+                        &_head {
+                            margin-bottom: 1.4rem;
+                        }
+                        ul {
+                            li:last-child {
+                                margin-bottom: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .social-media {
+                a {
+                    &:not(:last-child) {
+                        margin-right: 1.5rem;
+                    }
+                    &:hover {
+                        color: $Cyan;
+                    }
+                    font-size: 2rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

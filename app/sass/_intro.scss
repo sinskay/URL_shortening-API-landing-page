@@ -1,0 +1,52 @@
+@use "../sass/variables" as *;
+
+
+.intro {
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 570px;
+    .container {
+        min-height: 570px;
+    }
+    .intro-text {
+        z-index: 1;
+        h1 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        p {
+            color: $GrayishViolet;
+            max-width: 440px;
+            margin-bottom: 3.5rem;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+    .intro-image {
+        position: absolute;
+        right: -68px;
+        top: 5rem;
+    }
+
+    @media (max-width: 1023px) {
+        & {
+            position: static;
+            min-height: 700px;
+            padding-bottom: 2rem;
+            text-align: center;
+            .intro-image {
+                position: static;
+                right: 0;
+                top: 0;
+                margin-bottom: 1rem;
+            }
+            .intro-text {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

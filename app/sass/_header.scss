@@ -1,0 +1,104 @@
+@use "../sass/variables" as *;
+
+
+.header {
+    .container {
+        padding-top: 35px;   
+    }
+    .navbar {
+        
+        .humberger {
+            cursor: pointer;
+            span {
+                transition: all .2s ease-in-out;
+                display: block;
+                width: 28px;
+                height: 3px;
+                background-color: hsl(257, 7%, 63%);
+                &:not(:last-child) {
+                    margin-bottom: 6px;
+                }
+                @media (min-width: 1024px) {
+                    & {
+                        display: none;
+                    }
+                    .nav_links,.sign {
+                        display: block;
+                    }
+                }
+            }
+        }
+        
+        
+        .nav_links {
+            flex: 1;
+            margin-left: 2.75rem;
+            a { 
+                &:not(:last-child) {
+                    margin-right: 1.875rem;
+                }
+            }
+        }
+        .sign {
+            a {
+                &:first-child {
+                    margin-right: 2.0625rem;
+                }
+            }
+        }
+        
+        @media (max-width: 1023px) {
+            .nav_links,.sign {
+                display: none;
+            }
+        }
+
+        .mobile_nav {
+            overflow: hidden;
+            background-color: $DarkViolet;
+            position: absolute;
+            z-index: 999;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 4rem;
+            border-radius: 10px;
+            padding: 2.81rem 1.75rem;
+            width: 80%;
+            max-width: 450px;
+
+            opacity: 0;
+            visibility: hidden;
+            
+            transition: all .5s ease-in-out;
+            
+            
+            a {
+                color: #fff;
+            }
+
+            .nav_links__mobile {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                a {
+                    margin-bottom: 2.5rem;
+                }
+                a:last-child {
+                    margin-bottom: 1rem;
+                }
+            }
+            .separator {
+                color: $Gray;
+            }
+            .sign__mobile {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                a:not(:last-child) {
+                    margin-top: 1rem;
+                    margin-bottom: 2.5rem;
+                }
+            }
+        }
+    }
+}

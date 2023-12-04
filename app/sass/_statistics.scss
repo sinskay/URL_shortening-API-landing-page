@@ -1,0 +1,111 @@
+@use "../sass/variables" as *;
+
+
+.statistics {
+    overflow-x: hidden;
+    background-color: hsl(230, 25, 95);
+    padding-top: 7rem;
+    padding-bottom: 10.1875rem;
+    .container {
+        .statistics_text {
+            text-align: center;
+            padding-bottom: 6.06rem;
+            h1 {
+                font-weight: 600;
+            }
+            p {
+                max-width: 540px;
+                margin: 0 auto;
+                
+            }
+        }
+        .statistics_ {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 143px;
+                width: 80%;
+                height: 10px;
+                background-color: hsl(180, 66%, 49%);
+                z-index: 1;
+            }
+            .card {
+                position: relative;
+                z-index: 2;
+                &:not(:last-child) {
+                    margin-right: 1.81rem;
+                }
+                &:nth-child(2) {
+                    margin-top: 2.75rem;
+                }
+                &:last-child {
+                    margin-top: 5.5rem;
+                }
+                width: 352px;
+                height: fit-content;
+                border: none;
+                padding: 1.5rem 2rem;
+                position: relative;
+                .icon {
+                    position: absolute;
+                    top: -44px;
+                    background-color: $DarkViolet;
+                    width: 88px;
+                    height: 88px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
+                h4 {
+                    margin-top: 1.7rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                    color: $DarkViolet;
+                    
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            @media (max-width: 1024px) {
+                & {
+                    flex-direction: column;
+                    align-items: center;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        width: 10px;
+                        height: 100%;
+                        background-color: hsl(180, 66%, 49%);
+                        z-index: 1;
+                    }
+                    .card {
+                        &:not(:first-child) {
+                            margin-top: 5rem;
+                        }
+                        &:not(:last-child) {
+                            margin-right: 0;
+                        }
+                        .icon {
+                            position: absolute;
+                            top: -44px;
+                            background-color: $DarkViolet;
+                            width: 88px;
+                            height: 88px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

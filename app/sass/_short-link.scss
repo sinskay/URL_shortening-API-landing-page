@@ -1,0 +1,143 @@
+@use "../sass/variables" as *;
+
+
+.short-link {
+    margin-top: 8rem;
+    background-color: hsl(230, 25, 95, 100%);
+    min-height: 250px;
+    .input_container {
+        background-color: $DarkViolet;
+        background-image: url("./app/images/bg-shorten-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 3.25rem 4rem;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-75px);
+        overflow: hidden;
+        form {
+            width: 100%;
+            position: relative;
+            input {
+                width: 70%;
+                flex: 1;
+                border-radius: 8px;
+                border: none;
+                padding: 0.6rem 1.3rem;
+                outline: none;
+                &::placeholder {
+                    color: $Gray;
+                    font-size: .9rem;
+                }
+                margin-right: 1.5rem;
+                
+                
+            }
+            p {
+                position: absolute;
+                font-size: .9rem;
+                color: $Red;
+                margin: 0;
+                left: 2px;
+                top: 49px;
+                visibility: hidden;
+                opacity: 0;
+                transition: all .1s ease-in-out;
+            }
+            button {
+                
+                padding: 0.6rem 1.3rem;
+                border-radius: 8px;
+                border: none;
+                transition: opacity .2s ease;
+                font-weight: 700;
+                &:hover {
+                    opacity: 70%;
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            & {
+                padding: 3.25rem 1rem;
+                input {
+                    margin-right: 0;
+                    padding: 0.6rem 0.3rem;
+                    min-width: 100%;
+                }
+                button {
+                    margin-top: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            & {
+                background-image: url("./app/images/bg-shorten-mobile.svg");
+            }
+        }
+    }
+    .shorten_links {
+        margin-top: -2.5rem;
+        .links_container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.6875rem 2.1875rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+            .original_url {
+                width: 290px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a {
+                    color: $DarkViolet;
+                    abbr {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }        
+            }
+            .shorten_url {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                a {
+                    margin-right: 1.5625rem;
+                    color: $Cyan;
+                    abbr {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+                .styled-btn {
+                    border: none;
+                    padding: .4rem 1.3rem;
+                    border-radius: 5px;
+                }
+            }
+    
+            @media (max-width: 767px) {
+                & {
+                    flex-direction: column;
+                }
+                .original_url {
+                    margin-bottom: 1rem;
+                }
+                .shorten_url {
+                    justify-content: center;
+                }
+            }
+        }
+        
+    }
+}

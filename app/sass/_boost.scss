@@ -1,0 +1,32 @@
+@use "../sass/variables" as *;
+
+.boost {
+    background-image: url("./app/images/bg-boost-desktop.svg");
+    background-color: $DarkViolet;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-weight: 600;
+        margin-bottom: 1.6rem;
+    }
+    a {
+        &:hover {
+            color: #fff;
+        }
+        padding: 0.7rem 2rem;
+    }
+    @media (max-width: 500px) {
+        & {
+            background-image: url("./app/images/bg-boost-mobile.svg");
+        }
+    }
+}
